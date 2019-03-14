@@ -1,0 +1,11 @@
+/* Your custom css code goes here */
+
+.probootstrap-logo {
+    float: left;
+    color: #fff;
+    padding-left: 60px;
+    font-size: 20px;
+    display: block;
+    text-transform: lowercase;
+    font-weight: 700;
+}

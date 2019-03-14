@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  
+  <!-- START: section -->
+  <section class="probootstrap-intro probootstrap-intro-inner" style="background-image: url({% static "img/llama_scene3.jpg" %}); background-position: 0px 0px;" data-stellar-background-ratio="0.5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7 probootstrap-intro-text">
+          <h1 class="probootstrap-animate" data-animate-effect="fadeIn">Contact</h1>
+        </div>
+      </div>
+    </div>
+    <span class="probootstrap-animate"><a class="probootstrap-scroll-down js-next" href="#next-section">Scroll down <i class="icon-chevron-down"></i></a></span>
+  </section>
+  <!-- END: section -->
+
+  <main>
+    <section id="next-section" class="probootstrap-section">
+      <div class="container">
+        <div class="col-md-6">
+            <form action="." method="post" class="probootstrap-form">
+              {% csrf_token %}
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="name">What is your name?</label><br />
+                    {{form.name.errors}}
+                    {{form.name}}
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email">What is your quest? (or your email)</label><br />
+                {{form.email.errors}}
+                {{form.email}}
+
+              </div>
+              <div class="form-group">
+                <label for="message">What is the air speed velocity of an unladen swallow? (or how about a message)</label><br />
+                {{form.content.errors}}
+                  {{form.content}}
+              </div>
+              <div class="form-group">
+                <input type="submit" class="btn btn-primary" id="submit" name="submit" value="Send Message">
+              </div>
+            </form>
+          </div>
+          <div class="col-md-5 col-md-push-1">
+            <h3 class="mt0">Other ways to reach me</h3>
+            <ul class="probootstrap-contact-info">
+                <li><i class="icon-twitter"></i><span><a href="https://twitter.com/hibb"><strong>@hibb</strong> on Twitter</a></span></li>
+                <li><i class="icon-linkedin"></i><span><a href="https://www.linkedin.com/in/hibbie">I'm on LinkedIn professionally</a></span></li>
+            </ul>
+
+            <h3>Feedback</h3>
+            <p>This contact form works for personal and professional correspondance.  Well, at least as much in that someone who has llamas plastered all over their web site can be thought of as a 'professional'.</p>
+          </div>
+      </div>
+    </section>
+  </main>
+
+ {% endblock %}

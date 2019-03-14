@@ -1,0 +1,99 @@
+{% load static %}<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}hibbie.net{% endblock %}</title>
+    <meta name="description" content="Personal site for Thomas Hibbard, a full-stack Python Developer in Lake Jackson, Texas">
+    <meta name="keywords" content="thomas hibbard full stack python django web developer in lake jackson, texas">
+
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Rubik:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "css/styles-merged.css" %}">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <link rel="stylesheet" href="{% static "css/custom.css" %}">
+
+    <!--[if lt IE 9]>
+      <script src="{% static "js/vendor/html5shiv.min.js" %}"></script>
+      <script src="{% static "js/vendor/respond.min.js" %}"></script>
+    <![endif]-->
+
+     <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-P8HGKKB');</script>
+    <!-- End Google Tag Manager -->
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P8HGKKB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <!-- START: header -->
+
+  <header role="banner" class="probootstrap-header">
+    <div class="container-fluid">
+        <a href="{% url "home" %}" class="probootstrap-logo">hibbie.net</a>
+
+        <a href="#" class="probootstrap-burger-menu visible-xs" ><i>Menu</i></a>
+        <div class="mobile-menu-overlay"></div>
+
+        <nav role="navigation" class="probootstrap-nav hidden-xs">
+          <ul class="probootstrap-main-nav">
+            <li{% if request.path == "/" %} class="active"{% endif %}><a href="{% url "home" %}">Home</a></li>
+            <li{% if request.path == "/about/" %} class="active"{% endif %}><a href="{% url "about" %}">About Me</a></li>
+            <li{% if request.path == "/contact/" %} class="active"{% endif %}><a href="{% url "contact" %}">Contact</a></li>
+          </ul>
+          <ul class="probootstrap-header-social hidden-xs">
+            <li><a href="https://gitlab.com/hibbie/hibbie.net/" target="_blank" ><i class="icon-git"></i></a></li>
+            <li><a href="https://github.com/hibbie" target="_blank"><i class="icon-github"></i></a></li>
+            <li><a href="https://stackoverflow.com/users/339645/thomas-hibbard" target="_blank"><i class="icon-stackoverflow"></i></a></li>
+            <li><a href="https://twitter.com/hibb" target="_blank"><i class="icon-twitter"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/hibbie" target="_blank"><i class="icon-linkedin"></i></a></li>
+          </ul>
+          <div class="extra-text visible-xs">
+            <a href="#" class="probootstrap-burger-menu"><i>Menu</i></a>
+            <h5>Connect With Me</h5>
+            <ul class="social-buttons">
+                <li><a href="https://gitlab.com/hibbie/hibbie.net/" target="_blank" ><i class="icon-git"></i></a></li>
+                <li><a href="https://github.com/hibbie" target="_blank"><i class="icon-github"></i></a></li>
+                <li><a href="https://stackoverflow.com/users/339645/thomas-hibbard" target="_blank"><i class="icon-stackoverflow"></i></a></li>
+                <li><a href="https://twitter.com/hibb" target="_blank"><i class="icon-twitter"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/hibbie" target="_blank"><i class="icon-linkedin"></i></a></li>
+            </ul>
+          </div>
+        </nav>
+    </div>
+  </header>
+  <!-- END: header -->
+
+  {% block content %}{% endblock %}
+
+    <footer class="probootstrap-footer">
+      <div class="probootstrap-backtotop"><a href="#" class="js-backtotop"><i class="icon-chevron-thin-up"></i></a></div>
+      <div class="container">
+       <div class="row">
+         <div class="col-md-12 text-center border-top">
+             <p class="mb0">&copy; Copyright {% now "Y" %} <a href="https://hibbie.net/">Thomas Hibbard</a>. All Rights Reserved. <br> Design is from <a href="https://uicookies.com">uicookies.com</a> and uses sweet llama art from the always amazing <a href="https://www.pexels.com/">Pexels.com</a>.</p>
+             <a id="llama_mode" onclick="LlamaModeNoBreaksOnThisTrain();">Llama+ Mode</a>
+         </div>
+       </div>
+     </div>
+  </footer>
+
+    <script src="{% static "js/scripts.min.js" %}"></script>
+    <script src="{% static "js/main.min.js" %}"></script>
+    <script>
+        function LlamaModeNoBreaksOnThisTrain(){
+            console.log("How underwhelming, I know.")
+            document.getElementsByTagName('main')[0].innerHTML = "<img style='width: 100%; height; 100%;' src='{% static "img/llama.gif" %}' />";
+            document.getElementById("llama_mode").onclick = "";
+            document.getElementById("llama_mode").innerHTML = "YOU'RE WELCOME.";
+        }
+    </script>
+
+  </body>
+</html>

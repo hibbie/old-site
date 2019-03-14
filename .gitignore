@@ -1,0 +1,7 @@
+.DS_Store
+.idea/
+conf/local_settings.py
+static/admin
+static/summernote
+__pycache__/
+

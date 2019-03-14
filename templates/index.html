@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+  <!-- START: section -->
+  <section class="probootstrap-intro" style="background-image: url({% static "img/llama_scene.jpg" %});" data-stellar-background-ratio="0.5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7 probootstrap-intro-text">
+          <h1 class="probootstrap-animate" data-animate-effect="fadeIn"><span>Thomas</span> Hibbard</h1>
+          <div class="probootstrap-subtitle probootstrap-animate" data-animate-effect="fadeIn">
+            <h2>Web Developer</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <span class="probootstrap-animate"><a class="probootstrap-scroll-down js-next" href="#next-section">Scroll down <i class="icon-chevron-down"></i></a></span>
+  </section>
+  <!-- END: section -->
+
+  <main>
+    <section id="next-section" class="probootstrap-section">
+      <div class="container">
+        <div class="row probootstrap-gutter60 mb50">
+          <div class="col-md-6">
+              <img src="{% static "img/sweet-dad-hat.jpg" %}" class="img-responsive" alt="The picture is me trying to look incredibly cool and in tune with nature somewhere near Alamogordo, NM while wearing my sweet dad visor.  I\'m pretty sure I had some of the best waffles available in the southwest later that day."/>
+          </div>
+          <div class="col-md-6">
+            <h3 class="probootstrap-heading">What I am about</h3>
+            <p>I am a full stack web developer from Lake Jackson, Texas.  For the past {{timesince}} years I have worked as a developer.  That said, this site is just my little footprint on the web.  It's not intended to be a professional web design portfolio as I don't really advertise my talents that way.  Instead, think of this page as the irreverent, silly digital business card it is intended to be. </p>
+            <p>
+                <a href="{% url "about" %}" class="btn btn-primary">Read more about me</a><br /><br />
+                <a href="{% url "contact" %}" class="btn btn-primary">Go ahead and contact me</a>
+            </p>
+          </div>
+        </div>
+    </section>
+  </main>
+
+{% endblock %}

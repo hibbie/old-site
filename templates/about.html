@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- START: section -->
+  <section class="probootstrap-intro probootstrap-intro-inner" style="background-image: url({% static "img/llama_scene2.jpg" %}); background-position: 0px 0px;" data-stellar-background-ratio="0.5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7 probootstrap-intro-text">
+          <h1 class="probootstrap-animate" data-animate-effect="fadeIn">About Thomas</h1>
+          <div class="probootstrap-subtitle probootstrap-animate" data-animate-effect="fadeIn">
+          </div>
+        </div>
+      </div>
+    </div>
+    <span class="probootstrap-animate"><a class="probootstrap-scroll-down js-next" href="#next-section">Scroll down <i class="icon-chevron-down"></i></a></span>
+  </section>
+  <!-- END: section -->
+  <main>
+    <section id="next-section" class="probootstrap-section">
+      <div class="container">
+        <div class="row probootstrap-gutter60 mb50">
+          <div class="col-md-12">
+              <p>Originally from Ohio, Thomas Hibbard became involved in web development while working at the Youngstown Vindicator in 2007.   Toiling away his nights and weekends he began to experiment with web development using the lingua franca of the time, PHP.  Around this time was when he first started working with Python and the Django framework.  While at the Vindicator Thomas built several popular crowd pleasing apps and integrated an early Django CMS.
+            <p>Enticed by (accurate) claims of otherwordly barbeque and to-die-for breakfast tacos, Thomas moved to Victoria, Texas in 2011. There he worked as a Django Developer for the Victoria Advocate.  His role there led him to becoming lead developer at the newly formed digital agency, Affect Digital Media (ADM).  While at ADM Thomas was a key part of the <a href="http://ipublishmedia.com/winners-lmas-best-digital-agency/" target="_blank">award-winning</a> team there.  He remained with ADM until August 2018.</p>
+            <p>Thomas currently still works in the software development industry.  He <i>still</i> lives in <a href="https://smbc.myshopify.com/products/texas-shirt" target="_blank">Texas</a> with his wife <a href="http://www.allysonartwork.com/" target="_blank">Allyson</a> and two children Riley and Leonard.  When not working, Thomas spends his time taking selfies in the desert. 🤷</p>
+              <p><a href="{% url "contact" %}" class="btn btn-primary">Contact Thomas</a></p>
+          </div>
+        </div>
+    </section>
+  </main>
+
+{% endblock %}
